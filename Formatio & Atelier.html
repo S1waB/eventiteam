@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Formatio & Atelier.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="Images/logo_acceuil.png">
+    <title>Formation & Atelier</title> 
+</head>
+<body>
+    
+        <!-- Bouton de retour en haut -->
+<button class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    ↑
+  </button>
+  
+    
+    <div id="top">
+
+    <section >
+        <nav class="navbar">
+            <img src="Images/LOGO.png">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#features">Événements</a></li>
+                <li><a href="index.html#info">Infos</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>            
+        </nav>
+    </section>
+
+
+    <div id="formation-ateliers">
+        <h2>Bienvenue dans notre espace</h2>
+        
+        <!-- Boutons pour Inscription Formation et Atelier -->
+        <div class="inscription-container">
+            <label for="toggle-formation" class="inscription-formation-btn">Inscription Formation</label>
+            <label for="toggle-atelier" class="inscription-atelier-btn">Inscription Atelier</label>
+        </div>
+    
+        <!-- Checkboxes cachées pour gérer l'état -->
+        <input type="radio" id="toggle-formation" name="toggle-inscription" hidden>
+        <input type="radio" id="toggle-atelier" name="toggle-inscription" hidden>
+        <input type="radio" id="toggle-none" name="toggle-inscription" hidden checked>
+    
+        <!-- Formulaire pour Inscription Formation -->
+        <div class="form-container" id="formation-form">
+            <h3>Inscription Formation</h3>
+            <form>
+                <label for="full-name">Nom :</label>
+                <input type="text" id="full-name" name="full-name" required>
+
+                <label for="first-name">Prénom:</label>
+                <input type="text" id="first-name" name="first-name" required>
+    
+                <!-- Date de naissance -->
+                <label for="dob">Date de naissance:</label>
+                <input type="date" id="dob" name="dob" required>
+    
+                <!-- Email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+    
+                <!-- Téléphone -->
+                <label for="phone">Téléphone:</label>
+                <input type="tel" id="phone" name="phone" 
+                       pattern="^[5|9|2]\d{7}$" 
+                       placeholder="Ex: 91234567" 
+                       required>
+    
+                <!-- Adresse -->
+                <label for="address">Adresse:</label>
+                <input type="text" id="address" name="address" required>
+    
+    
+                <!-- Niveau d'étude -->
+                <label for="level">Niveau d'étude:</label>
+                <select id="level" name="level" required>
+                    <option value="doctorate">Préparatoire</option>
+                    <option value="doctorate">Licence</option>
+                    <option value="bachelor">Cycle d'ingénieur</option>
+                    <option value="master">Master</option>
+                </select>
+    
+                <!-- Année universitaire -->
+                <label for="year">Année universitaire:</label>
+                <input type="number" id="year" name="year" min="2023" max="2030" required>
+    
+                <label for="choice">Formation :</label>
+                <select id="choice" name="level" required>
+                    <option value="doctorate">Développement Web</option>
+                    <option value="bachelor">Data Science</option>
+                    <option value="master">Design UX/UI</option>
+                    <option value="master">Management</option>
+                </select>
+
+                <!-- Détails supplémentaires -->
+                <label for="reason">Pourquoi souhaitez-vous vous inscrire à cette formation ?</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+    
+                <!-- Consentement -->
+                <label for="consent">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    J'accepte que mes données soient utilisées conformément à la politique de confidentialité.
+                </label>
+    
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+        
+    
+        <!-- Formulaire pour Inscription Atelier -->
+        <div class="form-container" id="atelier-form">
+            <h3>Inscription Atelier</h3>
+            <form>
+                <label for="name-atelier">Nom:</label>
+                <input type="text" id="name-atelier" name="name" required>
+
+                <label for="name-atelier">Prénom:</label>
+                <input type="text" id="name-atelier" name="name" required>
+                
+                <label for="email-atelier">Email:</label>
+                <input type="email" id="email-atelier" name="email" required>
+
+                <label for="phone">Téléphone:</label>
+                <input type="tel" id="phone" name="phone" 
+                       pattern="^[5|9|2]\d{7}$" 
+                       placeholder="Ex: 91234567" 
+                       required>
+    
+                <!-- Adresse -->
+                <label for="address">Adresse:</label>
+                <input type="text" id="address" name="address" required>
+    
+                <!-- Niveau d'étude -->
+                <label for="level">Niveau d'étude:</label>
+                <select id="level" name="level" required>
+                    <option value="doctorate">Préparatoire</option>
+                    <option value="doctorate">Licence</option>
+                    <option value="bachelor">Cycle d'ingénieur</option>
+                    <option value="master">Master</option>
+                </select>
+
+                <label for="choice">Atelier :</label>
+                <select id="choice" name="level" required>
+                    <option value="doctorate">Design Graphique</option>
+                    <option value="bachelor">Marketing Digital</option>
+                    <option value="master">Arduino</option>
+                    <option value="master">Solidworks</option>
+                </select>
+
+                <label for="reason-atelier">Pourquoi souhaitez-vous participer à cet atelier ?</label>
+                <textarea id="reason-atelier" name="reason" rows="4" required></textarea>
+    
+                <!-- Consentement -->
+                <label for="consent-atelier">
+                    <input type="checkbox" id="consent-atelier" name="consent" required>
+                    J'accepte que mes données soient utilisées conformément à la politique de confidentialité.
+                </label>
+    
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+<section id="footer">
+    <div class="footer">
+        <div class="contact">
+            <p>Contactez-nous :</p>
+            <div class="contact-info">
+                <p>
+                    <img src="Images/phone-icon.png" alt="Téléphone" class="footer-icon">
+                    Téléphone : 
+                    <a href="tel:+21671781081">(216) 71 781 081</a>, 
+                    <a href="tel:+21622022444">(216) 22 022 444</a>
+                </p>
+                <p>
+                    <img src="Images/email-icon.png" alt="Email" class="footer-icon">
+                    Email : 
+                    <a href="mailto:info@iteam-univ.tn">info@iteam-univ.tn</a>
+                </p>
+                <p>
+                    <img src="Images/location-icon.png" alt="Adresse" class="footer-icon">
+                    Adresse : 85-87 Rue Palestine, 1002 Tunis
+                </p>
+            </div>
+        </div>
+            
+            <div class="social-media">
+                <p>Suivez-nous :</p>
+                <a href="https://www.facebook.com/iteam.university.tn" target="_blank">
+                    <img src="Images/facebook-logo.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/iTeamUniversity" target="_blank">
+                    <img src="Images/instagram-logo.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/company/iteam-univ/posts/?feedView=all" target="_blank">
+                    <img src="Images/linkedin-logo.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UCQXhW-RMeABXLzuirSk7shw" target="_blank">
+                    <img src="Images/youtube-logo.png" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+code html : 
+<section id="formation-ateliers">
+        <h2>Formation & Atelier</h2>
+        
+        <!-- Boutons pour afficher la liste des formations ou des ateliers -->
+        <div class="button-container">
+            <button id="show-formation">Inscription Formation</button>
+            <button id="show-atelier">Inscription Atelier</button>
+        </div>
+
+        <!-- Liste des formations (initialement cachée) -->
+        <div class="formation-list" id="formation-list" style="display: none;">
+            <h3>Choisissez une formation</h3>
+            <ul>
+                <li><button class="formation-button" data-formation="web">Développement Web</button></li>
+                <li><button class="formation-button" data-formation="data-science">Data Science</button></li>
+                <li><button class="formation-button" data-formation="design">Design UX/UI</button></li>
+                <li><button class="formation-button" data-formation="management">Management</button></li>
+            </ul>
+        </div>
+
+        <!-- Liste des ateliers (initialement cachée) -->
+        <div class="atelier-list" id="atelier-list" style="display: none;">
+            <h3>Choisissez un atelier</h3>
+            <ul>
+                <li><button class="atelier-button" data-atelier="web-development">Développement Web</button></li>
+                <li><button class="atelier-button" data-atelier="graphic-design">Design Graphique</button></li>
+                <li><button class="atelier-button" data-atelier="digital-marketing">Marketing Digital</button></li>
+            </ul>
+        </div>
+
+        <!-- Formulaire d'inscription (initialement caché) -->
+        <div class="form-container" id="form-container" style="display: none;">
+            <h3 id="form-title">Formulaire Inscription</h3>
+            <form id="formation-form">
+                <!-- Nom complet -->
+                <label for="full-name">Nom :</label>
+                <input type="text" id="full-name" name="full-name" required>
+
+                <label for="first-name">Prénom:</label>
+                <input type="text" id="first-name" name="first-name" required>
+    
+                <!-- Date de naissance -->
+                <label for="dob">Date de naissance:</label>
+                <input type="date" id="dob" name="dob" required>
+    
+                <!-- Email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+    
+                <!-- Téléphone -->
+                <label for="phone">Téléphone:</label>
+                <input type="tel" id="phone" name="phone" 
+                       pattern="^[5|9|2]\d{7}$" 
+                       placeholder="Ex: 91234567" 
+                       required>
+    
+                <!-- Adresse -->
+                <label for="address">Adresse:</label>
+                <input type="text" id="address" name="address" required>
+    
+                <!-- Formation choisie -->
+                <label for="course">Formation:</label>
+                <select id="course" name="course" required>
+                    <!-- Les options seront ajoutées dynamiquement -->
+                </select>
+    
+                <!-- Niveau d'étude -->
+                <label for="level">Niveau d'étude:</label>
+                <select id="level" name="level" required>
+                    <option value="doctorate">Préparatoire</option>
+                    <option value="doctorate">Licence</option>
+                    <option value="bachelor">Cycle d'ingénieur</option>
+                    <option value="master">Master</option>
+                </select>
+    
+                <!-- Année universitaire -->
+                <label for="year">Année universitaire:</label>
+                <input type="number" id="year" name="year" min="2023" max="2030" required>
+    
+                <!-- Détails supplémentaires -->
+                <label for="reason">Pourquoi souhaitez-vous vous inscrire à cette formation ?</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+    
+                <!-- Consentement -->
+                <label for="consent">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    J'accepte que mes données soient utilisées conformément à la politique de confidentialité.
+                </label>
+    
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+
+        <!-- Formulaire d'inscription Atelier (initialement caché) -->
+        <div class="form-container" id="atelier-container" style="display: none;">
+            <h3 id="atelier-form-title">Formulaire Inscription Atelier</h3>
+            <form id="atelier-form">
+                <label for="name-atelier">Nom:</label>
+                <input type="text" id="name-atelier" name="name" required>
+
+                <label for="name-atelier">Prénom:</label>
+                <input type="text" id="name-atelier" name="name" required>
+                
+                <label for="email-atelier">Email:</label>
+                <input type="email" id="email-atelier" name="email" required>
+
+                <label for="phone">Téléphone:</label>
+                <input type="tel" id="phone" name="phone" 
+                       pattern="^[5|9|2]\d{7}$" 
+                       placeholder="Ex: 91234567" 
+                       required>
+    
+                <!-- Adresse -->
+                <label for="address">Adresse:</label>
+                <input type="text" id="address" name="address" required>
+    
+                <!-- Niveau d'étude -->
+                <label for="level">Niveau d'étude:</label>
+                <select id="level" name="level" required>
+                    <option value="doctorate">Préparatoire</option>
+                    <option value="doctorate">Licence</option>
+                    <option value="bachelor">Cycle d'ingénieur</option>
+                    <option value="master">Master</option>
+                </select>
+                
+                <label for="reason-atelier">Pourquoi souhaitez-vous participer à cet atelier ?</label>
+                <textarea id="reason-atelier" name="reason" rows="4" required></textarea>
+    
+                <!-- Consentement -->
+                <label for="consent-atelier">
+                    <input type="checkbox" id="consent-atelier" name="consent" required>
+                    J'accepte que mes données soient utilisées conformément à la politique de confidentialité.
+                </label>
+    
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Afficher la liste des formations quand on clique sur le bouton "Formation"
+        document.getElementById('show-formation').addEventListener('click', function() {
+            document.getElementById('formation-list').style.display = 'block';
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('atelier-container').style.display = 'none';
+            document.getElementById('atelier-list').style.display = 'none';
+        });
+
+        // Afficher la liste des ateliers quand on clique sur le bouton "Atelier"
+        document.getElementById('show-atelier').addEventListener('click', function() {
+            document.getElementById('atelier-list').style.display = 'block';
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('atelier-container').style.display = 'none';
+            document.getElementById('formation-list').style.display = 'none';
+        });
+
+        // Lorsque l'utilisateur clique sur une formation, afficher le formulaire correspondant
+        const formationButtons = document.querySelectorAll('.formation-button');
+        formationButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const selectedFormation = this.getAttribute('data-formation');
+                const courseSelect = document.getElementById('course');
+                const formContainer = document.getElementById('form-container');
+                const formTitle = document.getElementById('form-title');
+                
+                // Mise à jour du titre du formulaire
+                formTitle.textContent = Formulaire d'Inscription - ${selectedFormation.charAt(0).toUpperCase() + selectedFormation.slice(1)};
+                
+                // Mettre à jour les options de formation
+                const option = document.createElement('option');
+                option.value = selectedFormation;
+                option.textContent = selectedFormation.charAt(0).toUpperCase() + selectedFormation.slice(1); // Capitalisation de la première lettre
+                
+                courseSelect.innerHTML = ''; // Réinitialiser les options
+                courseSelect.appendChild(option); // Ajouter l'option sélectionnée
+                
+                // Afficher le formulaire d'inscription à la formation
+                formContainer.style.display = 'block';
+                document.getElementById('formation-list').style.display = 'none'; // Cacher la liste des formations après sélection
+            });
+        });
+
+        // Lorsque l'utilisateur clique sur un atelier, afficher le formulaire correspondant
+        const atelierButtons = document.querySelectorAll('.atelier-button');
+        atelierButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const selectedAtelier = this.getAttribute('data-atelier');
+                const atelierForm = document.getElementById('atelier-form');
+                const atelierFormTitle = document.getElementById('atelier-form-title');
+
+                // Mise à jour du titre du formulaire
+                atelierFormTitle.textContent = Formulaire d'Inscription - ${selectedAtelier.charAt(0).toUpperCase() + selectedAtelier.slice(1)};
+
+                // Afficher le formulaire d'inscription à l'atelier
+                document.getElementById('atelier-container').style.display = 'block';
+                document.getElementById('atelier-list').style.display = 'none'; // Cacher la liste des ateliers après sélection
+            });
+        });
+
+        // Ajout de la fonction pour l'alerte et la redirection
+        document.getElementById('formation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher la soumission du formulaire par défaut
+
+            // Vérification de tous les champs
+            const formElements = this.elements;
+            let allFieldsFilled = true;
+
+            for (let i = 0; i < formElements.length; i++) {
+                if (formElements[i].type !== "submit" && !formElements[i].value) {
+                    allFieldsFilled = false;
+                    break;
+                }
+            }
+
+            if (allFieldsFilled) {
+                // Afficher l'alerte et rediriger
+                alert("Vous vous êtes inscrit avec succès !");
+                window.location.href = 'index.html'; // Remplacer par le lien réel de votre page d'accueil
+            } else {
+                alert("Veuillez remplir tous les champs.");
+            }
+        });
+    </script>
+
+code css : 
+/* Section formation & ateliers */
+#formation-ateliers {
+    margin: 40px 20px;
+}
+
+h2 {
+    color: #520833;
+    text-shadow: 6px 6px 5px #4d212e70;
+    margin-bottom: 80px;
+    margin-top: 10%;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 4em;
+    text-align: center;
+}
+
+h3 {
+    color: #4783b7;
+    text-shadow: 6px 6px 5px #1b547a70;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Conteneur des boutons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Style de base des boutons */
+button {
+    background-color: #42011f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none; /* Enlève la décoration par défaut du lien */
+    display: inline-block; /* Pour s'assurer qu'il est centré avec le texte */
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-right: 15px; /* Ajout d'un espace à droite du bouton */
+    font-family: cursive;
+}
+
+/* Effet de survol du bouton */
+button:hover {
+    background-color: #7bbcf0; /* Changement de couleur */
+    transform: translateY(-5px); /* Légère élévation du bouton */
+    box-shadow: 0 10px 20px #08508b6b; /* Ombre pour effet 3D */
+}
+
+/* Supprimer le margin-right du dernier bouton */
+.button-container button:last-child {
+    margin-right: 0; /* Aucun espace après le dernier bouton */
+}
+
+
+
+.formation-list, .atelier-list {
+    text-align: center;
+}
+
+.formation-list ul, .atelier-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.formation-list li, .atelier-list li {
+    margin: 10px 0;
+}
+
+.formation-button, .atelier-button {
+    padding: 10px 15px;
+    background: linear-gradient(145deg, #5f1236, #7bbcf0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: cursive;
+}
+
+.formation-button:hover, .atelier-button:hover {
+    background-color: #2980b9;
+}
+
+/* Formulaire */
+.form-container {
+    margin-top: 50px;
+    background: linear-gradient(145deg, #f9f9f9, #e8e8e8); /* Dégradé doux pour le fond */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    width: 100%;
+    max-width: 500px; /* Augmenter la largeur du formulaire */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Cursive', sans-serif;
+    transition: all 0.3s ease; /* Transition fluide pour les effets */
+    padding: 30px 30px;
+    background-image: url('Images/form.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Contenu du formulaire avec une seule colonne */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les éléments */
+    align-items: flex-start; /* Aligner tout à gauche */
+}
+
+/* Style des étiquettes */
+.form-container label {
+    font-size: 18px;
+    color: #520833; /* Couleur bordeaux pour les étiquettes */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espacement des lettres pour un effet élégant */
+    margin-bottom: 5px; /* Espacement entre le label et le champ */
+}
+
+/* Champs de saisie */
+.form-container input,
+.form-container select,
+.form-container textarea {
+    padding: 14px;
+    margin: 5px 0;
+    width: 100%; /* Champs de même taille */
+    max-width: 450px; /* Limite de largeur */
+    border-radius: 10px; /* Coins arrondis pour un look moderne */
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #fff; /* Fond propre pour les champs */
+    color: #164f69;
+    font-weight: bold;
+    font-family: cursive;
+    transition: all 0.3s ease;
+}
+
+/* Effet de focus sur les champs */
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    border: 1px solid #7bbcf0; /* Bordure bleue lors du focus */
+    background-color: #fafafa; /* Fond très léger pour les champs en focus */
+    box-shadow: 0 0 15px rgba(123, 188, 240, 0.5); /* Ombre bleue autour des champs */
+}
+
+/* Champs de texte */
+textarea {
+    resize: vertical; /* Permet le redimensionnement */
+}
+
+/* Bouton d'envoi */
+.form-container button {
+    padding: 14px 30px;
+    font-size: 16px;
+    background-color: #42011f; /* Bordeaux pour le fond du bouton */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px; /* Bouton arrondi */
+    font-weight: bold;
+    letter-spacing: 1px; /* Espacement des lettres pour un effet élégant */
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(66, 1, 31, 0.1); /* Ombre douce pour effet 3D */
+    margin-left: 35%;
+}
+
+/* Effet de survol et focus du bouton */
+.form-container button:hover {
+    background-color: #7bbcf0; /* Changement de couleur en bleu doux */
+    transform: translateY(-4px); /* Élève le bouton au survol */
+    box-shadow: 0 10px 25px rgba(123, 188, 240, 0.6); /* Ombre bleue plus marquée */
+
+}
+
+.form-container button:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(72, 139, 232, 0.7); /* Ombre bleue intense au focus */
+}

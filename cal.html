@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Meetings et Événements</title>
+    <link rel="stylesheet" href="cal.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="Images/logo_acceuil.png">
+</head>
+<body>
+    <button class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        ↑
+      </button>
+      
+        
+        <div id="top">
+
+    <section >
+                <nav class="navbar">
+                    <img src="Images/LOGO.png">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#features">Événements</a></li>
+                        <li><a href="index.html#info">Infos</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                    </ul>            
+                </nav>
+    </section>
+
+    <header>
+        <h1>Gestion des Meetings et du Calendrier</h1>
+    </header>
+    <main>
+        <section class="calendar-section">
+            <h2>Calendrier des Événements</h2>
+            <div class="calendar">
+                <div class="month">
+                    <span class="prev">&#10094;</span>
+                    <h3>Janvier 2025</h3>
+                    <span class="next">&#10095;</span>
+                </div>
+                <div class="days">
+                    <div>Dim</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mer</div>
+                    <div>Jeu</div>
+                    <div>Ven</div>
+                    <div>Sam</div>
+                </div>
+                <div class="dates">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="date">1</span>
+                    <span class="date">2</span>
+                    <span class="date">3</span>
+                    <span class="date">4</span>
+                    <span class="date">5</span>
+                    <span class="date">6</span>
+                    <span class="date">7</span>
+                    <span class="date">8</span>
+                    <span class="date">9</span>
+                    <span class="date">10</span>
+                    <span class="date">11</span>
+                    <span class="date">12</span>
+                    <span class="date">13</span>
+                    <span class="date">14</span>
+                    <span class="date today">15</span>
+                    <span class="date">16</span>
+                    <span class="date">17</span>
+                    <span class="date">18</span>
+                    <span class="date">19</span>
+                    <span class="date">20</span>
+                    <span class="date">21</span>
+                    <span class="date">22</span>
+                    <span class="date">23</span>
+                    <span class="date">24</span>
+                    <span class="date">25</span>
+                    <span class="date">26</span>
+                    <span class="date">27</span>
+                    <span class="date">28</span>
+                    <span class="date">29</span>
+                    <span class="date">30</span>
+                    <span class="date">31</span>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="event-form">
+            <h2>Ajouter/Modifier un Événement</h2>
+            <form>
+                <label for="event-title">Titre de l'Événement :</label>
+                <input type="text" id="event-title" placeholder="Exemple : Réunion Projet">
+
+                <label for="event-date">Date :</label>
+                <input type="date" id="event-date">
+
+                <label for="event-participants">Participants :</label>
+                <input type="text" id="event-participants" placeholder="Exemple : 10 personnes">
+
+                <button type="submit">Ajouter / Mettre à Jour</button>
+            </form>
+        </section>
+    </main>
+    <section id="footer">
+        <div class="footer">
+            <div class="contact">
+                <p>Contactez-nous :</p>
+                <div class="contact-info">
+                    <p>
+                        <img src="Images/phone-icon.png" alt="Téléphone" class="footer-icon">
+                        Téléphone : 
+                        <a href="tel:+21671781081">(216) 71 781 081</a>, 
+                        <a href="tel:+21622022444">(216) 22 022 444</a>
+                    </p>
+                    <p>
+                        <img src="Images/email-icon.png" alt="Email" class="footer-icon">
+                        Email : 
+                        <a href="mailto:info@iteam-univ.tn">info@iteam-univ.tn</a>
+                    </p>
+                    <p>
+                        <img src="Images/location-icon.png" alt="Adresse" class="footer-icon">
+                        Adresse : 85-87 Rue Palestine, 1002 Tunis
+                    </p>
+                </div>
+            </div>
+                
+                <div class="social-media">
+                    <p>Suivez-nous :</p>
+                    <a href="https://www.facebook.com/iteam.university.tn" target="_blank">
+                        <img src="Images/facebook-logo.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/iTeamUniversity" target="_blank">
+                        <img src="Images/instagram-logo.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/company/iteam-univ/posts/?feedView=all" target="_blank">
+                        <img src="Images/linkedin-logo.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCQXhW-RMeABXLzuirSk7shw" target="_blank">
+                        <img src="Images/youtube-logo.png" alt="YouTube" class="social-icon">
+                    </a>
+                </div>
+        </section>
+    </div>
+</body>
+</html>

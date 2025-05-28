@@ -1,0 +1,215 @@
+/* cal.css */
+body {
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+
+}
+
+header {
+    color: #520833;
+    text-shadow: 6px 6px 5px #4d212e70;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 2em;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+.calendar-section,
+.event-form {
+    background-color: #d2efff65;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.calendar-section {
+    flex: 1; /* Prend moins de place */
+    max-width: 350px; /* Largeur limitée du calendrier */
+}
+
+.event-form {
+    flex: 1;
+    max-width: 400px; /* Largeur contrôlée du formulaire */
+}
+
+h2 {
+    color: #520833;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+::placeholder {
+    font-family: cursive;
+}
+
+.calendar .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar .month h3 {
+    color: #520833;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.calendar .month .prev,
+.calendar .month .next {
+    font-size: 20px;
+    color: #520833;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.calendar .days,
+.calendar .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar .days div {
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.calendar .dates .date {
+    padding: 10px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), inset 0 -1px 2px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 14px;
+    color: #520833;
+}
+
+.calendar .dates .date:hover {
+    background-color: #7bbcf0;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar .dates .today {
+    background-color: #520833;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espacement des lettres pour un effet élégant */
+    font-family: cursive;
+}
+
+input {
+    width: 93%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #520833;
+    outline: none;
+    box-shadow: 0 0 8px rgba(82, 8, 51, 0.3);
+}
+
+button {
+    display: block;
+    width: 100%;
+    background-color: #520833;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    font-family: cursive;
+}
+
+button:hover {
+    background-color: #7bbcf0;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #08508b6b;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bouton de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #5192c7;
+    color: #42011f;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.738);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    background-color: #42011f;
+    color: #5192c7;
+}
+
+body {
+    scroll-behavior: smooth;
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-padding-top: 20px;
+}

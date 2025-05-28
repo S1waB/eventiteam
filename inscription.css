@@ -1,0 +1,166 @@
+body {
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+.container {
+    margin-top: 25px;
+    margin-bottom: 2%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-family: 'Cursive', sans-serif;
+    transition: all 0.3s ease; /* Transition fluide pour les effets */
+    padding: 30px 30px;
+    background-image: url('Images/form.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+h2 {
+    color: #4783b7;
+    text-shadow: 6px 6px 5px #1b547a70;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 3em;
+    text-align: center;
+}
+
+label {
+    font-size: 18px;
+    color: #520833; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+
+input{
+    width: 100%; 
+    max-width: 450px; 
+    padding: 14px; 
+    margin: 10px 0; 
+    border: 2px solid transparent; 
+    border-radius: 15px; 
+    background: linear-gradient(145deg, #ffffff, #f2f2f2); 
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.7); 
+    font-size: 16px; 
+    color: #520833; 
+    font-family: 'Cursive', sans-serif;
+    transition: all 0.3s ease; 
+    font-family: cursive;
+}
+
+.form-group {
+    display: flex; /* Utilisation de Flexbox pour aligner les éléments sur la même ligne */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    gap: 10px; /* Espace entre chaque select */
+    align-items: center; /* Aligner verticalement les éléments */
+}
+
+.form-group select {
+    width: 32%; 
+    padding: 14px;
+    margin: 10px 0;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f2f2f2);
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    color: #520833;
+    font-family: 'Cursive', sans-serif;
+    transition: all 0.3s ease;
+}
+
+#education {
+    width: 100%; 
+    max-width: 450px; 
+    padding: 14px; 
+    margin: 10px 0; 
+    border: 2px solid transparent; 
+    border-radius: 15px; 
+    background: linear-gradient(145deg, #ffffff, #f2f2f2); 
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.7); 
+    font-size: 16px; 
+    color: #520833; 
+    font-family: 'Cursive', sans-serif;
+    transition: all 0.3s ease; 
+    font-family: cursive;
+}
+
+button {
+    background-color: #42011f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+    margin-right: 15px;
+    font-family: cursive;
+    width: 90%;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #7bbcf0;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #08508b6b;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Bouton de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #5192c7;
+    color: #42011f;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.738);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    background-color: #42011f;
+    color: #5192c7;
+}
+
+body {
+    scroll-behavior: smooth;
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-padding-top: 20px;
+}

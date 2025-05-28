@@ -1,0 +1,124 @@
+/* Style pour le footer */
+#footer {
+    background: linear-gradient(to right, #5192c7, #42011f);
+    color: floralwhite;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Conteneur du footer avec Flexbox */
+.footer {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre contact et social media */
+    align-items: flex-start; /* Aligner les deux sections en haut */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Section contact à gauche */
+.contact {
+    flex: 1; /* Prend toute la largeur disponible */
+    text-align: left; /* Texte aligné à gauche */
+}
+
+/* Section social-media à droite */
+.social-media {
+    flex: 1; /* Prend toute la largeur disponible */
+    text-align: center; /* Texte aligné à droite */
+}
+
+/* Animations d'apparition du texte */
+.footer p {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* Conteneur d'informations de contact */
+.footer .contact-info p {
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 2s 0.5s forwards;
+}
+
+/* Icônes dans les informations de contact */
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation de transition pour l'icône de téléphone, email et adresse */
+.footer-icon:hover {
+    transform: rotate(360deg);
+}
+
+/* Animation des icônes des réseaux sociaux */
+.social-media {
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s 1s forwards;
+}
+
+/* Icônes des réseaux sociaux */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Effet au survol des icônes des réseaux sociaux */
+.social-icon:hover {
+    transform: scale(1.2);
+    background-color: #5192c7; /* Changement de couleur de fond au survol */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.footer p {
+    font-weight: bold;
+    font-family: cursive;
+    font-size: larger;
+    text-align: center;
+}
+
+/* Lien de contact */
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-family: cursive;
+    text-align: center;
+}
+
+/* Effet de soulignement animé sur hover */
+.footer a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Animation d'apparition des éléments */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

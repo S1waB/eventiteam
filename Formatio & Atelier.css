@@ -1,0 +1,287 @@
+/* Style général du corps de la page */
+body {
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section formation & ateliers */
+#formation-ateliers {
+    margin: 40px 20px;
+}
+
+h2 {
+    color: #520833;
+    text-shadow: 6px 6px 5px #4d212e70;
+    margin-bottom: 80px;
+    margin-top: 10%;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 4em;
+    text-align: center;
+}
+
+h3 {
+    color: #4783b7;
+    text-shadow: 6px 6px 5px #1b547a70;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 3em;
+    text-align: center;
+}
+
+
+/* Boutons pour Inscription Formation et Atelier */
+.inscription-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.inscription-formation-btn, .inscription-atelier-btn {
+    background: linear-gradient(145deg, #5f1236, #7bbcf0);
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-family: cursive;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(66, 1, 31, 0.2);
+    margin: 0 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.inscription-formation-btn:hover, .inscription-atelier-btn:hover {
+    background-color: #7bbcf0; /* Changement de couleur */
+    transform: translateY(-5px); /* Légère élévation du bouton */
+    box-shadow: 0 10px 20px #08508b6b; /* Ombre pour effet 3D */
+}
+
+/* Style de base des formulaires (masqués par défaut) */
+.form-container {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-family: 'Cursive', sans-serif;
+    transition: all 0.3s ease; /* Transition fluide pour les effets */
+    padding: 30px 30px;
+    background-image: url('Images/form.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Champs de formulaire */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container label {
+    font-size: 18px;
+    color: #520833; /* Couleur bordeaux pour les étiquettes */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espacement des lettres pour un effet élégant */
+    margin-bottom: 5px; 
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea  {
+    width: 100%; /* Champs de même largeur */
+    max-width: 450px; /* Limite de largeur */
+    padding: 14px; /* Espacement interne */
+    margin: 10px 0; /* Espacement externe entre les champs */
+    border: 2px solid transparent; /* Bordure initiale transparente */
+    border-radius: 15px; /* Coins arrondis pour un look moderne */
+    background: linear-gradient(145deg, #ffffff, #f2f2f2); /* Dégradé subtil */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.7); /* Effet de relief interne */
+    font-size: 16px; /* Taille de police */
+    color: #520833; /* Couleur du texte */
+    font-family: 'Cursive', sans-serif; /* Police assortie */
+    transition: all 0.3s ease; /* Transition fluide */
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    outline: none; /* Supprime la bordure par défaut */
+    border: 2px solid #7bbcf0; /* Bordure bleue élégante */
+    background: linear-gradient(145deg, #f9f9f9, #ececec); /* Fond plus clair */
+    box-shadow: 0 0 15px rgba(123, 188, 240, 0.5); /* Ombre bleutée */
+}
+
+textarea {
+    resize: vertical; /* Permet uniquement le redimensionnement vertical */
+    min-height: 100px;
+}
+
+/* Placeholder stylé */
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+    color: #b3b3b3; /* Couleur douce pour le texte indicatif */
+    font-style: italic; /* Texte en italique pour distinguer */
+    font-size: 14px; /* Taille légèrement plus petite */
+}
+
+/* État désactivé */
+.form-container input:disabled,
+.form-container textarea:disabled,
+.form-container select:disabled {
+    background: #f0f0f0; /* Fond grisé */
+    color: #a0a0a0; /* Texte atténué */
+    cursor: not-allowed; /* Curseur non autorisé */
+    opacity: 0.7; /* Transparence */
+}
+
+/* Bouton d'envoi */
+.form-container button {
+    padding: 14px 30px;
+    font-size: 16px;
+    background-color: #42011f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-container button:hover {
+    outline: none;
+    box-shadow: 0 0 20px rgba(72, 139, 232, 0.7); /* Ombre bleue intense au focus */
+}
+
+/* Affichage conditionnel des formulaires via les checkboxes */
+#toggle-formation:checked ~ #formation-form {
+    display: block;
+}
+
+#toggle-atelier:checked ~ #atelier-form {
+    display: block;
+}
+
+select option:first-child {
+    color: #ccc;
+    display: none;
+}
+
+.form-container label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #520833;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #7bbcf0;
+    border-radius: 4px;
+    background: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.form-container input[type="checkbox"]:checked {
+    background: #7bbcf0;
+    border-color: #42011f;
+}
+
+.form-container input[type="checkbox"]:hover {
+    border-color: #42011f;
+}
+
+/* Conteneur des boutons existants */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #42011f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-right: 15px;
+    font-family: cursive;
+}
+
+button:hover {
+    background-color: #7bbcf0;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #08508b6b;
+}
+
+.button-container button:last-child {
+    margin-right: 0;
+}
+
+/* Bouton de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #5192c7;
+    color: #42011f;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.738);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    background-color: #42011f;
+    color: #5192c7;
+}
+
+body {
+    scroll-behavior: smooth;
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-padding-top: 20px;
+}
+
+#footer {
+    margin-top: 20%;
+}
+
+::placeholder {
+    font-family: cursive;
+}

@@ -1,0 +1,376 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 97.35%;
+    min-height: 70vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #5192c7, #42011f);
+    padding: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hero video {
+    max-width: 60%;
+    max-height: 60%; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1; 
+    background-color: rgba(0, 0, 0, 0.3); 
+    border: 5px solid rgba(255, 255, 255, 0.6); 
+}
+
+.hero h2 {
+    position: absolute;
+    top: 10%; /* Texte positionné au-dessus de la vidéo */
+    color: white;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Ajout d'ombre pour une meilleure lisibilité */
+    z-index: 2; /* Place le texte au-dessus de tout */
+    animation: fadeInDown 1.5s ease-in-out; /* Animation d'apparition */
+}
+
+/* Animation du texte */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet au survol de la vidéo */
+.hero video {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.hero video:hover {
+    transform: scale(1.1); /* Légère agrandissement */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9); /* Ombre plus prononcée */
+}
+
+/* Animation du video */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Features Section */
+.features {
+    padding: 30px 30px;
+    text-align: center;
+    background-image: url('Images/student.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Superposition bleu transparente */
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 139, 180, 0.208);
+    z-index: 1;
+}
+
+/* Texte au-dessus de la superposition */
+.features h2,
+.features-container {
+    position: relative;
+    z-index: 2;
+}
+
+.features h2 {
+    color: #520833;
+    text-shadow: 6px 6px 5px #69424d;
+    margin-bottom: 80px;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 4em;
+}
+
+/* Grid pour aligner les boîtes */
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Style des liens autour des box */
+.feature-link {
+    text-decoration: none; /* Supprime le soulignement */
+    color: inherit; /* Conserve la couleur par défaut */
+    display: block; /* Rend tout le box cliquable */
+    border-radius: 15px;
+}
+
+/* Boîtes */
+.feature-box {
+    background: linear-gradient(145deg, #e1f3ff, rgb(218, 236, 244));
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 5px 5px 15px rgba(104, 156, 188, 0.768), -5px -5px 15px rgba(104, 150, 188, 0.768);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 80px;
+}
+
+.feature-box:hover {
+    transform: scale(1.1) rotate(-1deg);
+    box-shadow: 5px 5px 25px #951e5a89, -5px -5px 25px #951e5a89;
+    background: linear-gradient(145deg, #5f1236, #7bbcf0);
+}
+
+.feature-box:hover h3 {
+    color: #ceeff8;
+}
+
+.feature-box h3 {
+    color: #7d2020;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    animation: slideIn 0.8s ease-out;
+    font-family: cursive;
+}
+
+.feature-box img {
+    width: 50%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+.feature-box:hover img {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-box img {
+        max-height: 150px;
+    }
+}
+
+
+/* Info */
+/* Grille de cartes */
+.info h2 {
+    color: #520833;
+    text-shadow: 4px 4px 5px #69424d;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 4em;
+    text-align: center;
+}
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+    gap: 30px;
+    padding: 0 20px;
+    justify-items: center;
+    margin-top: 30px; /* Espace au-dessus des cartes */
+}
+
+/* Style pour chaque carte */
+.info-card {
+    position: relative;
+    background-color: #ceeff827;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 80px;
+
+}
+
+/* Animation d'apparition des cartes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet au survol de la carte */
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenu des cartes */
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Images dans les cartes avec taille uniforme */
+#vieAsso {
+    width: 100%; /* Largeur de l'image égale à celle de la carte */
+    height: 250px; /* Hauteur fixe pour toutes les images */
+    object-fit: cover; /* Garde l'aspect de l'image tout en remplissant l'espace défini */
+    border-radius: 8px; /* Coins arrondis des images */
+    transition: transform 0.3s ease; /* Animation au survol */
+}
+
+.info-card img:hover {
+    transform: scale(1.05); /* Légère zoom lors du survol */
+}
+
+
+/* Titre et sous-titre des cartes */
+.info-card h3 {
+    color: #5c071e;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.info-card h4 {
+    color: #4f4f4f;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-family: cursive;
+}
+
+.info-card p {
+    color: #171835;
+    font-size: 1em;
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-family: cursive;
+}
+
+.info-card a
+{
+    font-family: cursive;
+}
+
+/* Style du bouton "En savoir plus" */
+.btn-more-info {
+    background-color: #42011f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none; /* Enlève la décoration par défaut du lien */
+    display: inline-block; /* Pour s'assurer qu'il est centré avec le texte */
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-more-info:hover {
+    background-color: #7bbcf0;
+}
+
+
+
+.esp{
+    color: white;
+}
+
+/* Bouton de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px; /* Positionné en bas */
+    right: 20px;  /* Positionné à droite */
+    width: 60px;
+    height: 60px;
+    background-color: #5192c7;
+    color: #42011f;
+    border-radius: 50%; /* Forme ronde */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.738);
+    z-index: 9999; /* Toujours au-dessus des autres éléments */
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.scroll-to-top:hover {
+    background-color: #42011f;
+    color: #5192c7;
+}
+
+
+
+/* Cacher le bouton lorsqu'on est en haut de la page */
+body {
+    scroll-behavior: smooth;
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-padding-top: 20px;
+}

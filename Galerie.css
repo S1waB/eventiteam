@@ -1,0 +1,137 @@
+/* Styles de base */
+body {
+    text-align: center;
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Titre principal */
+h1 {
+    color: #520833;
+    text-shadow: 6px 6px 5px #4d212e70;
+    margin-bottom: 80px;
+    margin-top: 10%;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: cursive;
+    font-size: 4em;
+    text-align: center;
+}
+
+/* Conteneur de la galerie */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+}
+
+/* Grille de galerie dynamique */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.588);
+}
+
+/* Titre des catégories */
+.category-title {
+    grid-column: span 4;
+    font-size: 40px;
+    font-weight: 600;
+    color: #368dad;
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: cursive;
+    text-shadow: 4px 4px 5px #21324d70;
+}
+
+/* Style des images avec animation */
+.image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: auto; /* Pas de contrainte de largeur */
+    height: auto; /* Pas de contrainte de hauteur */
+    max-width: 100%; /* Empêche l'image de déborder horizontalement */
+    max-height: 100%; /* Empêche l'image de déborder verticalement */
+    object-fit: contain; /* Préserve les proportions de l'image */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Animation au survol */
+.image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.image:hover img {
+    transform: scale(1.15);
+}
+
+/* Bouton de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px; /* Positionné en bas */
+    right: 20px;  /* Positionné à droite */
+    width: 60px;
+    height: 60px;
+    background-color: #5192c7;
+    color: #42011f;
+    border-radius: 50%; /* Forme ronde */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.738);
+    z-index: 9999; /* Toujours au-dessus des autres éléments */
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.scroll-to-top:hover {
+    background-color: #42011f;
+    color: #5192c7;
+}
+
+
+
+/* Cacher le bouton lorsqu'on est en haut de la page */
+body {
+    scroll-behavior: smooth;
+    background-image: url('Images/Capture\ d\'écran\ 2025-01-12\ 052051.png');
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-padding-top: 20px;
+}
